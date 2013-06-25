@@ -1,5 +1,6 @@
 from functools import wraps
 
+
 class Command(object):
 
     def __init__(self, name, func, arg_names):
@@ -70,4 +71,3 @@ class Climate(object):
             self.commands[namespace] = cli
         else:
             raise DuplicatedCommand
-
