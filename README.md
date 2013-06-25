@@ -120,6 +120,6 @@ By default the command name is the decorated function name but it can be changed
 
     cli(docopt(__doc__, version='SayWorld 3.0'))
 
-
+If you want to pass the entire argument dictionary you can use the wildcard, `*` as the parameter name in the decorator.
 
 
