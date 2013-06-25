@@ -69,5 +69,5 @@ class Climate(object):
         elif namespace not in self.commands.keys():
             self.commands[namespace] = cli
         else:
-            raise CommandExists
+            raise DuplicatedCommand
 
