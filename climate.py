@@ -20,7 +20,7 @@ class Command(object):
         return "<Command {0}({1})>".format(self.name, ", ".join(self.arg_names))
 
 
-class CommandExists(Exception):
+class DuplicatedCommand(Exception):
     """ Duplicated command name """
     pass
 
@@ -45,7 +45,7 @@ class Climate(object):
         if name not in self.commands.keys():
             self.commands[name] = Command(name, func, arg_names)
         else:
-            raise CommandExists
+            raise DuplicatedCommand(name)
 
     def command(self, *args, **kwargs):
         def wrapped_cmd(func):
